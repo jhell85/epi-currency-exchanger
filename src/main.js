@@ -12,11 +12,11 @@ import { CEService } from "./currency_exchanger";
 $(document).ready(function () {
   $("#submitBtn").click(function () {
     
-    async () => {
+    (async () => {
       console.log("in");
       let currencyData = new CEService();
       const response = await currencyData.getExchangeRates();
       console.log(response);
-    };
+    })();
   });
 });

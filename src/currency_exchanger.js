@@ -6,7 +6,9 @@
 export class CEService {
   async getExchangeRates(){
     try{
-      let response = await fetch(`https://prime.exchangerate-api.com/v5/API_KEY/latest/USD`);
+      let response = await fetch(`https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/USD`);
+      console.log(response);
+      
       let jsonifiedResponse;
       if(response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
