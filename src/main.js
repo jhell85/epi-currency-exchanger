@@ -7,18 +7,22 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import $ from "jquery";
-import { CEService } from "./currency_exchanger";
+import { CEService, CurrencyExchange } from "./currency_exchanger";
 let currencyFormat = require("currency-format");
 
 $(document).ready(function () {
   $("#submitBtn").click(function () {
-    let currency = $("#currency").val();
-    let amount = $("#amount").val();
     (async () => {
+      let amount = $("#amount").val();
+      let currency = $("#currency").val();
       let currencyData = new CEService();
       const response = await currencyData.getExchangeRates(currency);
       console.log(response);
+      let currencyExchange = new CurrencyExchange(currency, amount, response);
+      currencyExchange.getCurrencyData();
+      currencyExchange.convert();
     })();
+
   });
   populateDropDown();
 });
@@ -26,7 +30,7 @@ $(document).ready(function () {
 function populateDropDown() {
   console.log(currencyFormat);
 
-  let currencyCodes = ["USD", "AED", "ARS", "AUD", "BGN", "BRL", "BSD", "CAD", "CHF", "CLP", "CNY", "COP", "CZK", "DKK", "DOP", "EGP", "EUR", "FJD", "GBP", "GTQ", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "KZT", "MXN", "MYR", "NOK", "NZD", "PAB", "PEN", "PHP", "PKR", "PLN", "PYG", "RON", "RUB", "SAR", "SEK", "SGD", "THB", "TRY", "TWD", "UAH", "UYU", "ZAR"]
+  let currencyCodes = ["USD", "AED", "ARS", "AUD", "BGN", "BRL", "BSD", "CAD", "CHF", "CLP", "CNY", "COP", "CZK", "DKK", "DOP", "EGP", "EUR", "FJD", "GBP", "GTQ", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "KZT", "MXN", "MYR", "NOK", "NZD", "PAB", "PEN", "PHP", "PKR", "PLN", "PYG", "RON", "RUB", "SAR", "SEK", "SGD", "THB", "TRY", "TWD", "UAH", "UYU", "ZAR"];
   console.log(currencyCodes.length);
   
   currencyCodes.forEach((code) => {
