@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Currency Exchanger</title>
-  </head>
+
+<head>
+  <title>Currency Exchanger</title>
+</head>
+
 <body>
   <div class="container">
     <!-- input form  -->
@@ -10,23 +12,31 @@
       <div class="col-md-6 offset-md-3 box-decore">
         <h1 class="text-center">Currency Exchanger</h1>
 
-          <div class="form-group">
-            <label for="input-1">Input 1</label>
+        <div class="form-group">
+          <div>
             <input type="text" class="form-control" id="input-1" aria-describedby="input">
-            <small id="input1-Help" class="form-text text-muted">You can put your thoughts here.</small>
+            <label for="currency">Pick a currency </label>
+            <select id="currency">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
           </div>
-          </div>
-          <button id="submitBtn"  class="btn btn-primary btn-lg btn-block">Submit</button>
-
+          <small id="input1-Help" class="form-text text-muted">You can put your thoughts here.</small>
+        </div>
       </div>
-    </div>
+      <button id="submitBtn" class="btn btn-primary btn-lg btn-block">Submit</button>
 
-    <!-- output box  -->
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <div class="output">Output here</div>
-      </div>
     </div>
+  </div>
+
+  <!-- output box  -->
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="output">Output here</div>
+    </div>
+  </div>
   </div>
 </body>
 
