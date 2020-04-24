@@ -10,23 +10,24 @@
     <!-- input form  -->
     <div class="row">
       <div class="col-md-6 offset-md-3 box-decore">
-        <h1 class="text-center">Currency Exchanger</h1>
+        <h1 class="text-center mt-2 mb-5">Currency Exchanger</h1>
 
-        <div class="form-group">
-          <div>
-            <input type="text" class="form-control" id="input-1" aria-describedby="input">
-            <label for="currency">Pick a currency </label>
-            <select id="currency">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
-            </select>
+        <div class="container">
+          <small class="form-text text-right text-muted mr-4">amount</small>
+          <div class="row">
+            <div class="col-4">
+              <label for="currency">Pick a currency to convert from</label>
+            </div>
+            <div class="col-4">
+              <select class="form-control" id="currency"></select>
+            </div>
+            <div class="col-4">
+              <input class="form-control" id="amount" type="number" value="1">
+            </div>
           </div>
-          <small id="input1-Help" class="form-text text-muted">You can put your thoughts here.</small>
         </div>
+        <button id="submitBtn" class="btn btn-primary btn-lg btn-block">Submit</button>
       </div>
-      <button id="submitBtn" class="btn btn-primary btn-lg btn-block">Submit</button>
 
     </div>
   </div>
