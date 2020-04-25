@@ -20,19 +20,35 @@ $(document).ready(function () {
       console.log(response);
       let currencyExchange = new CurrencyExchange(currency, amount, response);
       currencyExchange.getCurrencyData();
-      currencyExchange.convert();
+      let displayList = currencyExchange.convert();
+      let header = displayList.shift()
+      $('#output-container').html(`${header}<div class="output row justify-content-md-center"></div>`)
+      $('.output').html(printList(displayList));
+      
     })();
 
   });
   populateDropDown();
 });
 
+function printList(displayList){
+  let display = ""
+  display += `<div class="col-3">`
+  for (let i = 0; i < displayList.length; i++) {
+    const element = displayList[i];
+     if (i % 10 === 0 && i != 1 && i != 0){
+      display += `</div><div class="col-3 pb-3">${element}`
+    } else {
+      display += element
+    }
+  }
+  return display
+}
+
 function populateDropDown() {
   console.log(currencyFormat);
 
   let currencyCodes = ["USD", "AED", "ARS", "AUD", "BGN", "BRL", "BSD", "CAD", "CHF", "CLP", "CNY", "COP", "CZK", "DKK", "DOP", "EGP", "EUR", "FJD", "GBP", "GTQ", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "KZT", "MXN", "MYR", "NOK", "NZD", "PAB", "PEN", "PHP", "PKR", "PLN", "PYG", "RON", "RUB", "SAR", "SEK", "SGD", "THB", "TRY", "TWD", "UAH", "UYU", "ZAR"];
-  console.log(currencyCodes.length);
-  
   currencyCodes.forEach((code) => {
     for (const key in currencyFormat)
       if (code === key)
@@ -42,3 +58,4 @@ function populateDropDown() {
         );
   });
 }
+

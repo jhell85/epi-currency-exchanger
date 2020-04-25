@@ -45,13 +45,19 @@ export class CurrencyExchange {
     }
   }
   convert(){
+    let header = `<h3 class="text-center mt-3 mb-3">${this.inFront ? this.symbol : ""}${this.amount}${this.inFront ? '': this.symbol} ${this.name} is trading at </h3>`
+    let printList = [];
     let rates = this.data["conversion_rates"]
     for (const code in rates){
       for(const key in currencyFormat)
       if(code === key){
-        console.log(`${this.inFront ? this.symbol : ""}${this.amount}${this.inFront ? '': this.symbol} equals ${rates[code] * this.amount} ${currencyFormat[key]['name']}`);
-        
+        let convertedAmount = Math.round((rates[code] * this.amount) * 100)/100
+        printList.push(`<div class="">${convertedAmount} ${currencyFormat[key]['name']}</div>`);
       }
     }
+    printList.shift()
+    printList.unshift(header)
+    console.log(printList);
+    return printList
   }
 }
