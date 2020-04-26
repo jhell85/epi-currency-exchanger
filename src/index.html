@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ballo_Tamma_2">
   <title>Currency Exchanger</title>
 </head>
 
 <body>
   <div class="container">
-    <!-- input form  -->
     <div class="row">
       <div class="col-md-6 offset-md-3 box-decore">
+        <img src="./img/page_not_found.jpeg" alt="">
         <h1 class="text-center mt-2 mb-5">Currency Exchanger</h1>
-
         <div class="container">
-          <small class="form-text text-right text-muted mr-4">amount</small>
+          <b class="form-text text-right mr-4">amount</b>
           <div class="row">
             <div class="col-4">
-              <label for="currency">pick a currency to convert from</label>
+              <b>pick a currency to convert from</b>
             </div>
             <div class="col-4">
               <select class="form-control" id="currency"></select>
@@ -28,13 +28,9 @@
         </div>
         <button id="submitBtn" class="btn btn-primary btn-lg btn-block">Exchange Rates</button>
       </div>
-
     </div>
   </div>
-
-  <!-- output box  -->
-  <div id="output-container"class="container"></div>
-  </div>
+  <div id="output-container" class="container"></div>
 </body>
 
 </html>
