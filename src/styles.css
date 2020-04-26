@@ -1,10 +1,28 @@
 .box-decore {
   margin-top: 55px;
+  border-radius: 20px;
   padding: 25px;    
-  box-shadow: 1px 1px 15px -4px rgba(0,0,0,.2);
+  background: rgb(118,228,99);
+  background: linear-gradient(180deg, rgba(118,228,99,0.7399334733893557) 30%, rgba(44,171,38,0.7455357142857143) 50%, rgba(11,91,2,0.7567401960784313) 81%);
 }
-body{
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.__7G9mOhxmWIJXDJbVAV9QHaDt%26pid%3DApi&f=1');
-  background-position: center center;
-  background-repeat: no-repeat;
+
+body { 
+  -webkit-text-stroke: .4px black;
+  font-family: 'Ballo_Tamma_2', serif;
+  color: goldenrod;
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.__7G9mOhxmWIJXDJbVAV9QHaDt%26pid%3DApi&f=1') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.output{
+  background: rgb(11,32,214);
+  background: linear-gradient(180deg, rgba(11,32,214,0.8183648459383753) 30%, rgba(3,13,96,0.7539390756302521) 50%, rgba(1,6,40,0.6502976190476191) 81%);
+  border-radius: 20px;
+}
+.error{
+  background: url('http://betanews.com/wp-content/uploads/2016/01/Error-404-dark-clouds-warning-page-not-found-e1452851329452.jpg');
+  
 }
